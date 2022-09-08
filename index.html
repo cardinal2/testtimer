@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<head>
+   <link href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fontss.gstatic.com" crossorigin>
+   <link href="basic.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="scripts.js"></script>
+
+   <script id="satextra100-box-html" type="text/html">
+      <h2> SAT +100% <button id="satextra100Start" onclick="startExam('satextra100', this)"> Start </button> <button id="satextra100-remove" onclick="removeExam('satextra100',this)"> Remove </button> </h2>
+      <button id="satextra100Reset" class="reset-button" onclick="resetExam('satextra100', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Reading 5 Minutes </span> <span class="timer-box" id="satRead5Mins"> 125:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing 5 Minutes </span> <span class="timer-box" id="satWriting5Mins"> 65:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - No Calc 5 Mins </span> <span class="timer-box" id="satMathNCalc5Mins"> 45:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - No Calc End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak2"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - Calc 5 Mins </span> <span class="timer-box" id="satMathCalc5Mins"> 105:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - Calc End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script> <!-- invisible html for js to append -->
+   <script id="satextra50-box-html" type="text/html">
+      <h2> SAT +50% <button id="satextra50Start" onclick="startExam('satextra50', this)"> Start </button> <button id="satextra50-remove" onclick="removeExam('satextra50',this)"> Remove </button> </h2>
+      <button id="satextra50Reset" class="reset-button" onclick="resetExam('satextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Reading 5 Minutes </span> <span class="timer-box" id="satRead5Mins"> 93:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing 5 Minutes </span> <span class="timer-box" id="satWriting5Mins"> 48:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - No Calc 5 Mins </span> <span class="timer-box" id="satMathNCalc5Mins"> 33:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - No Calc End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak2"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - Calc 5 Mins </span> <span class="timer-box" id="satMathCalc5Mins"> 78:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - Calc End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script> <!-- invisible html for js to append -->
+   <script id="sat-box-html" type="text/html">
+      <h2> SAT <button id="satStart" onclick="startExam('sat', this)"> Start </button> <button id="sat-remove" onclick="removeExam('sat',this)"> Remove </button> </h2>
+      <button id="satReset" class="reset-button" onclick="resetExam('sat', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Reading 5 Minutes </span> <span class="timer-box" id="satRead5Mins"> 60:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing 5 Minutes </span> <span class="timer-box" id="satWriting5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - No Calc 5 Mins </span> <span class="timer-box" id="satMathNCalc5Mins"> 20:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - No Calc End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak2"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - Calc 5 Mins </span> <span class="timer-box" id="satMathCalc5Mins"> 50:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math - Calc End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script> <!-- invisible html for js to append -->
+   <script id="actextra100-box-html" type="text/html">
+      <h2> ACT +100% <button id="actextra100Start" onclick="startExam('actextra100' , this)"> Start </button> <button id="actextra100-remove" onclick="removeExam('actextra100',this)"> Remove </button> </h2>
+      <button id="actextra100Reset" class="reset-button" onclick="resetExam('actextra100', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('actextra100', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> English 5 Minutes </span> <span class="timer-box" id="actEng5Mins"> 85:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> English End </span> <span class="timer-box" id="actEngEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Minutes </span> <span class="timer-box" id="actMath5Mins"> 115:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="actMathEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="actBreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box" id="actReading5Mins"> 65:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="actReadingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Science 5 Mins </span> <span class="timer-box " id="actScience5Mins"> 65:00</span> </div>
+         </li>
+         <li>
+            <div> <span> Science End </span> <span class="timer-box" id="actScienceEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="actBreak2"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box" id="actEsay5Mins"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box" id="actEssayEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="actextra50-box-html" type="text/html">
+      <h2> ACT +50% <button id="actextra50Start" onclick="startExam('actextra50' , this)"> Start </button> <button id="actextra50-remove" onclick="removeExam('actextra50',this)"> Remove </button> </h2>
+      <button id="actextra50Reset" class="reset-button" onclick="resetExam('actextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('actextra50', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> English 5 Minutes </span> <span class="timer-box" id="actEng5Mins"> 65:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> English End </span> <span class="timer-box" id="actEngEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Minutes </span> <span class="timer-box" id="actMath5Mins"> 85:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="actMathEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="actBreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box" id="actReading5Mins"> 50:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="actReadingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Science 5 Mins </span> <span class="timer-box " id="actScience5Mins"> 50:00</span> </div>
+         </li>
+         <li>
+            <div> <span> Science End </span> <span class="timer-box" id="actScienceEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="actBreak2"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box" id="actEsay5Mins"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box" id="actEssayEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="act-box-html" type="text/html">
+      <h2> ACT <button id="actStart" onclick="startExam('act' , this)"> Start </button> <button id="act-remove" onclick="removeExam('act',this)"> Remove </button> </h2>
+      <button id="actReset" class="reset-button" onclick="resetExam('act', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> English 5 Minutes </span> <span class="timer-box" id="actEng5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> English End </span> <span class="timer-box" id="actEngEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Minutes </span> <span class="timer-box" id="actMath5Mins"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="actMathEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="actBreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box" id="actReading5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="actReadingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Science 5 Mins </span> <span class="timer-box " id="actScience5Mins"> 30:00</span> </div>
+         </li>
+         <li>
+            <div> <span> Science End </span> <span class="timer-box" id="actScienceEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="actBreak2"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box" id="actEsay5Mins"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box" id="actEssayEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="actnoessay-box-html" type="text/html">
+      <h2> ACT No Essay <button id="actStart" onclick="startExam('act' , this)"> Start </button> <button id="act-remove" onclick="removeExam('act',this)"> Remove </button> </h2>
+      <button id="actReset" class="reset-button" onclick="resetExam('act', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> English 5 Minutes </span> <span class="timer-box" id="actEng5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> English End </span> <span class="timer-box" id="actEngEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Minutes </span> <span class="timer-box" id="actMath5Mins"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="actMathEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="actBreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box" id="actReading5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="actReadingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Science 5 Mins </span> <span class="timer-box " id="actScience5Mins"> 30:00</span> </div>
+         </li>
+         <li>
+            <div> <span> Science End </span> <span class="timer-box" id="actScienceEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="psatextra100-box-html" type="text/html">
+      <h2> PSAT +100% <button id="psatextra100Start" onclick="startExam('psatextra100', this)"> Start </button> <button id="psatextra100-remove" onclick="removeExam('psatextra100',this)"> Remove </button> </h2>
+      <button id="psatextra100Reset" class="reset-button" onclick="resetExam('psatextra100', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Reading 5 Minutes </span> <span class="timer-box" id="psatRead5Mins"> 105:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="psatReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing 5 Minutes </span> <span class="timer-box" id="psatWriting5Mins"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box" id="psatWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Mins </span> <span class="timer-box" id="psatMath5Mins1"> 75:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="psatMathEnd1"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math No Calc 5 Mins </span> <span class="timer-box" id="psatMath5Mins2"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math No Calc End </span> <span class="timer-box" id="psatMathEnd2"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="psatextra50-box-html" type="text/html">
+      <h2> PSAT +50% <button id="psatextra50Start" onclick="startExam('psatextra50', this)"> Start </button> <button id="psatextra50-remove" onclick="removeExam('psatextra50',this)"> Remove </button> </h2>
+      <button id="psatextra50Reset" class="reset-button" onclick="resetExam('psatextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Reading 5 Minutes </span> <span class="timer-box" id="psatRead5Mins"> 78:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="psatReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing 5 Minutes </span> <span class="timer-box" id="psatWriting5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box" id="psatWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Mins </span> <span class="timer-box" id="psatMath5Mins1"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="psatMathEnd1"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math No Calc 5 Mins </span> <span class="timer-box" id="psatMath5Mins2"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math No Calc End </span> <span class="timer-box" id="psatMathEnd2"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="psat-box-html" type="text/html">
+      <h2> PSAT <button id="psatStart" onclick="startExam('psat', this)"> Start </button> <button id="psat-remove" onclick="removeExam('psat',this)"> Remove </button> </h2>
+      <button id="psatReset" class="reset-button" onclick="resetExam('psat', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Reading 5 Minutes </span> <span class="timer-box" id="psatRead5Mins"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="psatReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing 5 Minutes </span> <span class="timer-box" id="psatWriting5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box" id="psatWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Mins </span> <span class="timer-box" id="psatMath5Mins1"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="psatMathEnd1"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math No Calc 5 Mins </span> <span class="timer-box" id="psatMath5Mins2"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math No Calc End </span> <span class="timer-box" id="psatMathEnd2"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="satsub-box-html" type="text/html">
+      <h2> SAT Subject <button id="satsubStart" onclick="startExam('satsub', this)"> Start </button> <button id="satsub-remove" onclick="removeExam('satsub',this)"> Remove </button> </h2>
+      <button id="satsubReset" class="reset-button" onclick="resetExam('satsub', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> 1st Exam 5 Mins </span> <span class="timer-box" id="satsub5Mins1"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> 1st Exam End </span> <span class="timer-box" id="satsubEnd1"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satsubbreak1"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> 2nd Exam 5 Mins </span> <span class="timer-box" id="satsub5Mins2"> 55:00</span> </div>
+         </li>
+         <li>
+            <div> <span> 2nd Exam End </span> <span class="timer-box" id="satsubEnd2"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satsubBreak2"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> 3rd Exam 5 Mins </span> <span class="timer-box" id="satsub5Mins3"> 50:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> 3rd Exam End </span> <span class="timer-box" id="satsubEnd3"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="ssatulextra50-box-html" type="text/html">
+      <h2> SSAT UL +50% <button id="ssatulextra50Start" onclick="startExam('ssatulextra50', this)"> Start </button> <button id="ssatulextra50-remove" onclick="removeExam('ssatulextra50',this)"> Remove </button> </h2>
+      <button id="ssatulextra50Reset" class="reset-button" onclick="resetExam('ssatulextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 32:30 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal 5 Mins </span> <span class="timer-box" id="ssatVerbal5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal End </span> <span class="timer-box" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box" id="satbreak2"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 17:30 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="ssatul-box-html" type="text/html">
+      <h2> SSAT UL <button id="ssatulStart" onclick="startExam('ssatul', this)"> Start </button> <button id="ssatul-remove" onclick="removeExam('ssatul',this)"> Remove </button> </h2>
+      <button id="ssatulReset" class="reset-button" onclick="resetExam('ssatul', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 20:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal 5 Mins </span> <span class="timer-box" id="ssatVerbal5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal End </span> <span class="timer-box" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box" id="satbreak2"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="ssatml-box-html" type="text/html">
+      <h2> SSAT ML <button id="ssatmlStart" onclick="startExam('ssatml', this)"> Start </button> <button id="ssatml-remove" onclick="removeExam('ssatml',this)"> Remove </button> </h2>
+      <button id="ssatmlReset" class="reset-button" onclick="resetExam('ssatml', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 20:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal 5 Mins </span> <span class="timer-box" id="ssatVerbal5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal End </span> <span class="timer-box" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box" id="satbreak2"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="ssatmlextra50-box-html" type="text/html">
+      <h2> SSAT ML +50% <button id="ssatmlextra50Start" onclick="startExam('ssatmlextra50', this)"> Start </button> <button id="ssatmlextra50-remove" onclick="removeExam('ssatmlextra50',this)"> Remove </button> </h2>
+      <button id="ssatmlextra50Reset" class="reset-button" onclick="resetExam('ssatmlextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 32:30 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satbreak1"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal 5 Mins </span> <span class="timer-box" id="satWriting5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal End </span> <span class="timer-box" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satMathNCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box" id="satMathNCalcEnd"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satbreak2"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satMathCalc5Mins"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 17:30 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental 5 Mins </span> <span class="timer-box" id="satMathCalcEnd"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental End </span> <span class="timer-box" id="satMathCalcEnd"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="ssat3_4-box-html" type="text/html">
+      <h2> SSAT 3/4 <button id="ssat3_4Start" onclick="startExam('ssat3_4', this)"> Start </button> <button id="ssat3_4-remove" onclick="removeExam('ssat3_4',this)"> Remove </button> </h2>
+      <button id="ssat3_4Reset" class="reset-button" onclick="resetExam('ssat3_4', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal 5 Mins </span> <span class="timer-box" id="satbreak1"> 0:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal End </span> <span class="timer-box" id="satWriting5Mins"> 0:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 15:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample 5 Mins </span> <span class="timer-box" id="satbreak2"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="ssat3_4extra50-box-html" type="text/html">
+      <h2> SSAT 3/4 +50% <button id="ssat3_4extra50Start" onclick="startExam('ssat3_4extra50', this)"> Start </button> <button id="ssat3_4extra50-remove" onclick="removeExam('ssat3_4extra50',this)"> Remove </button> </h2>
+      <button id="ssat3_4extra50Reset" class="reset-button" onclick="resetExam('ssat3_4extra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Quantitative 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal 5 Mins </span> <span class="timer-box" id="satbreak1"> 0:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal End </span> <span class="timer-box" id="satWriting5Mins"> 0:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 15:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing Sample 5 Mins </span> <span class="timer-box" id="satbreak2"> 20:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Writing End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="lsat-box-html" type="text/html">
+      <h2> LSAT <button id="lsatStart" onclick="startExam('lsat', this)"> Start </button> <button id="lsat-remove" onclick="removeExam('lsat',this)"> Remove </button> </h2>
+      <button id="lsatReset" class="reset-button" onclick="resetExam('lsat', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Logical Reasoning 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Logical Reasoning End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Logic Games 5 Mins </span> <span class="timer-box" id="satbreak1"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Logic Games End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental Section 5 Mins </span> <span class="timer-box" id="satbreak2"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Experimental Section End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="iseellextra50-box-html" type="text/html">
+      <h2> ISEE LL +50% <button id="iseellextra50Start" onclick="startExam('iseellextra50', this)"> Start </button> <button id="iseellextra50-remove" onclick="removeExam('iseellextra50',this)"> Remove </button> </h2>
+      <button id="iseellextra50Reset" class="reset-button" onclick="resetExam('iseellextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Verbal Reasoning 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning 5 Mins </span> <span class="timer-box" id="satbreak1"> 50:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 50:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement 5 Mins </span> <span class="timer-box" id="satbreak2"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satMathCalc5Mins"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="iseell-box-html" type="text/html">
+      <h2> ISEE LL <button id="iseellStart" onclick="startExam('iseell', this)"> Start </button> <button id="iseell-remove" onclick="removeExam('iseell',this)"> Remove </button> </h2>
+      <button id="iseellReset" class="reset-button" onclick="resetExam('iseell', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Verbal Reasoning 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 15:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning 5 Mins </span> <span class="timer-box" id="satbreak1"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement 5 Mins </span> <span class="timer-box" id="satbreak2"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satMathCalc5Mins"> 10:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="isee_ml_ul-box-html" type="text/html">
+      <h2> ISEE ML/UL <button id="isee_ml_ulStart" onclick="startExam('isee_ml_ul', this)"> Start </button> <button id="isee_ml_ul-remove" onclick="removeExam('isee_ml_ul',this)"> Remove </button> </h2>
+      <button id="isee_ml_ulReset" class="reset-button" onclick="resetExam('isee_ml_ul', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Verbal Reasoning 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 15:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning 5 Mins </span> <span class="timer-box" id="satbreak1"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement 5 Mins </span> <span class="timer-box" id="satbreak2"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="isee_ml_ul_50-box-html" type="text/html">
+      <h2> ISEE ML/UL +50% <button id="isee_ml_ul_50Start" onclick="startExam('isee_ml_ul_50', this)"> Start </button> <button id="isee_ml_ul_50-remove" onclick="removeExam('isee_ml_ul_50',this)"> Remove </button> </h2>
+      <button id="isee_ml_ul_50Reset" class="reset-button" onclick="resetExam('isee_ml_ul_50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Verbal Reasoning 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning 5 Mins </span> <span class="timer-box" id="satbreak1"> 48:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 48:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement 5 Mins </span> <span class="timer-box" id="satbreak2"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="isee_ml_ul_100-box-html" type="text/html">
+      <h2> ISEE ML/UL +100% <button id="isee_ml_ul_100Start" onclick="startExam('isee_ml_ul_100', this)"> Start </button> <button id="isee_ml_ul_100-remove" onclick="removeExam('isee_ml_ul_100',this)"> Remove </button> </h2>
+      <button id="isee_ml_ul_100Reset" class="reset-button" onclick="resetExam('isee_ml_ul_100', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Verbal Reasoning 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 35:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning 5 Mins </span> <span class="timer-box" id="satbreak1"> 65:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 65:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Reading Comp End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement 5 Mins </span> <span class="timer-box" id="satbreak2"> 75:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math Achievement End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay 5 Mins </span> <span class="timer-box break" id="satMathCalc5Mins"> 55:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Essay End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="hsptextra50-box-html" type="text/html">
+      <h2> HSPT +50% <button id="hsptextra50Start" onclick="startExam('hsptextra50', this)"> Start </button> <button id="hsptextra50-remove" onclick="removeExam('hsptextra50',this)"> Remove </button> </h2>
+      <button id="hsptextra50Reset" class="reset-button" onclick="resetExam('hsptextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Verbal Skills 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 19:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Skills End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Skills 5 Mins </span> <span class="timer-box" id="satbreak1"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Skills End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 62:30 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 2:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Language 5 Mins </span> <span class="timer-box" id="satbreak2"> 32:30 </span> </div>
+         </li>
+         <li>
+            <div> <span> Language End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="hspt-box-html" type="text/html">
+      <h2> HSPT <button id="hsptStart" onclick="startExam('hspt', this)"> Start </button> <button id="hspt-remove" onclick="removeExam('hspt',this)"> Remove </button> </h2>
+      <button id="hsptReset" class="reset-button" onclick="resetExam('hspt', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Verbal Skills 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 11:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Skills End </span> <span class="timer-box" id="satReadEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Skills 5 Mins </span> <span class="timer-box" id="satbreak1"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Skills End </span> <span class="timer-box" id="satWriting5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math 5 Mins </span> <span class="timer-box break" id="satMathNCalc5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Math End </span> <span class="timer-box" id="satMathNCalcEnd"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Break </span> <span class="timer-box break" id="satWritingEnd"> 2:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Language 5 Mins </span> <span class="timer-box" id="satbreak2"> 20:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Language End </span> <span class="timer-box break" id="satMathCalc5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="pws-box-html" type="text/html">
+      <h2> PWS <button id="pwsStart" onclick="startExam('pws', this)"> Start </button> <button id="pws-remove" onclick="removeExam('pws',this)"> Remove </button> </h2>
+      <button id="pwsReset" class="reset-button" onclick="resetExam('pws', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> PWS 5 Mins</span> <span class="timer-box" id="satRead5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> PWS End</span> <span class="timer-box" id="satRead5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="gre-box-html" type="text/html">
+      <h2> GRE <button id="greStart" onclick="startExam('gre', this)"> Start </button> <button id="gre-remove" onclick="removeExam('gre',this)"> Remove </button> </h2>
+      <button id="greReset" class="reset-button" onclick="resetExam('gre', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Analytical Writing 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Analytical Writing End</span> <span class="timer-box" id="satRead5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning 5 Mins</span> <span class="timer-box" id="satRead5Mins"> 25:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning End</span> <span class="timer-box" id="satRead5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End</span> <span class="timer-box" id="satRead5Mins"> 30:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End</span> <span class="timer-box" id="satRead5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+   <script id="greextra50-box-html" type="text/html">
+      <h2> GRE +50% <button id="greextra50Start" onclick="startExam('greextra50', this)"> Start </button> <button id="greextra50-remove" onclick="removeExam('greextra50',this)"> Remove </button> </h2>
+      <button id="greextra50Reset" class="reset-button" onclick="resetExam('greextra50', this)"> Reset </button>
+      <button class="skip-button" onclick="skip('act', this)"> Skip </button>
+      <div class="textarea-container" > <textarea class="studentname-textarea" rows="5"> </textarea> </div>
+      <ul class="timer-list">
+         <li>
+            <div> <span> Analytical Writing 5 Mins </span> <span class="timer-box" id="satRead5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Analytical Writing End</span> <span class="timer-box" id="satRead5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning 5 Mins</span> <span class="timer-box" id="satRead5Mins"> 40:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Verbal Reasoning End</span> <span class="timer-box" id="satRead5Mins"> 5:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End</span> <span class="timer-box" id="satRead5Mins"> 50:00 </span> </div>
+         </li>
+         <li>
+            <div> <span> Quantitative Reasoning End</span> <span class="timer-box" id="satRead5Mins"> 5:00 </span> </div>
+         </li>
+      </ul>
+   </script>
+
+
+   <script id="notif-format" type="text/html">
+      <span> <button onclick="clearNotif(this)"> X </button> </span>
+   </script>
+   <!-- invisible html for js to append -->
+
+</head>
+<body>
+   <div id="notif-modal" class="modal">
+
+   <div class="modal-content">
+      <button class="close" onclick="disappearModal()">&times;</button>
+      <h2 id="modal-text"></h2>
+   </div>
+
+</div>
+   <div class="content-box" id="notif-box">
+      <h2> Finished Timers </h2>
+   </div>
+   <div class="grid" id="box-grid">
+      <div class="content-box">
+         <h2> Tests </h2>
+         <ul class="checkbox-list">
+            <li>
+               <button id="act"> Add ACT </button>
+            </li>
+            <li>
+               <button id="actextra50"> Add ACT +50% </button>
+            </li>
+            <li>
+               <button id="actextra100"> Add ACT +100% </button>
+            </li>
+            <li>
+               <button id="actnoessay"> Add ACT No Essay </button>
+            </li>
+            <li>
+               <button id="sat"> Add SAT </button>
+            </li>
+            <li>
+               <button id="satextra50"> Add SAT +50% </button>
+            </li>
+            <li>
+               <button id="satextra100"> Add SAT +100% </button>
+            </li>
+            <li>
+               <button id="psat"> Add PSAT </button>
+            </li>
+            <li>
+               <button id="psatextra50"> Add PSAT +50% </button>
+            </li>
+            <li>
+               <button id="psatextra100"> Add PSAT +100% </button>
+            </li>
+            <li>
+               <button id="ssatul"> Add SSAT UL </button>
+            </li>
+            <li>
+               <button id="ssatulextra50"> Add SSAT UL +50% </button>
+            </li>
+            <li>
+               <button id="ssatml"> Add SSAT ML </button>
+            </li>
+            <li>
+               <button id="ssatmlextra50"> Add SSAT ML +50% </button>
+            </li>
+            <li>
+               <button id="ssat3_4"> Add SSAT 3/4 </button>
+            </li>
+            <li>
+               <button id="ssat3_4extra50"> Add SSAT 3/4 +50% </button>
+            </li>
+            <li>
+               <button id="lsat"> Add LSAT </button>
+            </li>
+            <li>
+               <button id="isee_ml_ul"> Add ISEE ML/UL </button>
+            </li>
+            <li>
+               <button id="isee_ml_ul_50"> Add ISEE ML/UL +50% </button>
+            </li>
+            <li>
+               <button id="isee_ml_ul_100"> Add ISEE ML/UL +100% </button>
+            </li>
+            <li>
+               <button id="hspt"> Add HSPT </button>
+            </li>
+            <li>
+               <button id="hsptextra50"> Add HSPT +50% </button>
+            </li>
+            <li>
+               <button id="pws"> Add PWS </button>
+            </li>
+            <li>
+               <button id="gre"> Add GRE </button>
+            </li>
+            <li>
+               <button id="greextra50"> Add GRE +50% </button>
+            </li>
+         </ul>
+      </div>
+      <div class="content-box">
+         <h2> Next Timers </h2>
+         <ul class="timer-list" id="next-timer-list">
+
+         </ul>
+      </div>
+   </div>
+
+
+</body>
+</html>
